@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     ContactComponent,
     HeaderComponent,
     FooterComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
