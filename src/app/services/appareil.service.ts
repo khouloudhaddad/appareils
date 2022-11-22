@@ -8,25 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class AppareilService {
 
-  appareils = [
-    new Appareil('Machine à laver', 'éteint'),
-    new Appareil('TV', 'allumé'),
-    new Appareil('Ordinateur', 'allumé'),
-    new Appareil('Micro Onde', 'éteint'),
-    new Appareil('Four', 'allumé'),
-    new Appareil('XBOX', 'éteint'),
-    new Appareil('Hot', 'allumé'),
-  ];
+  appareils!: Appareil[];
   isAuth = false;
   constructor(private http: HttpClient) {
      this.chargerListAppareil().subscribe((listApp) => {
-       console.log(listApp);
+       //console.log(listApp);
        this.appareils = listApp;
     });
   }
 
   switchStatus(index:number) {
     if (this.appareils[index].status === 'allumé') {
+      console.log('here')
       this.appareils[index].status = 'éteint';
     } else {
       this.appareils[index].status = 'allumé';

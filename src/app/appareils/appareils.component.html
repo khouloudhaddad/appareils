@@ -1,14 +1,12 @@
-<h1>Liste des Appareils</h1>
+<br />
+<h2>Mes Appareils</h2>
 <div class="spinner-border text-warning" role="status" *ngIf="isLoading">
   <span class="visually-hidden">Loading...</span>
 </div>
-
-<ul class="list-group" *ngIf="!isLoading">
-<app-appareil
-[name]="app.name"
-[status]="app.status"
-[index]="i"
-*ngFor="let app in listAppareils;let i = index"
-></app-appareil>
+<ul class="list-group" style="width: 50%" *ngIf="!isLoading">
+  <app-appareil [name]="app.name" [status]="app.status" [index]="i"
+    *ngFor="let app of appareils; let i = index"></app-appareil>
 </ul>
-
+<br />
+<button class="btn btn-primary" (click)="onAllumerTout()">Allumer tout</button>
+&nbsp;

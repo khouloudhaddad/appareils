@@ -1,11 +1,12 @@
 <div class="card">
   <div class="card-body">
     <!-- String interpolation -->
-    <div style="width: 15px; height: 15px; background-color: red" *ngIf="status === 'éteint'"></div>
+    <div style="width: 15px; height: 15px; background-color: red"
+    *ngIf="status === 'éteint'"></div>
     <li [ngClass]="{
         'list-group-item': true,
-        'list-group-item-success': status === 'allumé',
-        'list-group-item-danger': status === 'éteint'
+        'list-group-item-success': status == 'allumé',
+        'list-group-item-danger': status == 'éteint'
       }">
       <h4> Appareil: {{ name }} - Statut: {{ getStatus() }} </h4>
       <p>Last modified: {{ lastModified | date : 'short'}} </p>

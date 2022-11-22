@@ -20,6 +20,7 @@ export class AppareilComponent implements OnInit {
   }
 
   onSwitch() {
+    console.log(this.index)
     this.service.switchStatus(this.index);
   }
 

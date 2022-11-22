@@ -9,13 +9,13 @@ import { Appareil } from '../models/appareil';
 })
 export class AppareilsComponent implements OnInit {
 
-  listAppareils!: Appareil[];
+  appareils!: Appareil[];
   isLoading = false;
   constructor(private service: AppareilService) {
     this.isLoading = true;
     this.service.chargerListAppareil()
       .subscribe((listAppareils) => {
-        this.listAppareils = listAppareils;
+        this.appareils = listAppareils;
         this.isLoading = false;
     })
   }
