@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppareilService } from '../services/appareil.service';
+import { Appareil } from '../models/appareil';
 
 @Component({
   selector: 'app-appareils',
@@ -7,7 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppareilsComponent implements OnInit {
 
-  constructor() { }
+  listAppareils!: Appareil[];
+  isLoading = false;
+  constructor(private service: AppareilService) {
+    this.isLoading = true;
+    this.service.chargerListAppareil()
+      .subscribe((listAppareils) => {
+        this.listAppareils = listAppareils;
+        this.isLoading = false;
+    })
+  }
+
+  onAllumerTout() {
+    this.service.allumerTout();
+  }
+
+  onEteindreTout() {
+    if (confirm("Voulez-vous vraiment tout éteindre ?")) {
+      this.service.eteindreTout();
+    }
+  }
 
   ngOnInit(): void {
   }

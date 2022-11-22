@@ -6,7 +6,7 @@ import { AppareilsComponent } from './appareils/appareils.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', component: AppareilsComponent },
+  { path: '', component: AppareilsComponent, pathMatch:'full' },
   { path: 'login', component: AuthenticationComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'appareils', component: AppareilsComponent },
